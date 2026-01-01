@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Green Step | About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1 class="logo">The Green Step</h1>
+    </header>
+
+    <div class="container">
+        <hr class="nav-hr">
+        <nav class="nav-grid">
+            <a href="index.html" class="nav-card">About Us</a>
+            <a href="gallery.html" class="nav-card">Gallery</a>
+            <a href="get-involved.html" class="nav-card">Get Involved</a>
+            <a href="contact.html" class="nav-card">Contact</a>
+        </nav>
+        <hr class="nav-hr">
+    </div>
+
+    <section class="donate-hero-container">
+        <div class="donate-hero-overlay">
+            <h2 class="hero-title-poppins">Make a Difference With Your Contribution</h2>
+            <p class="hero-desc-open">Your donation helps support climate action programs across Malaysia, from tree planting and waste reduction projects to community education and environmental clean-ups. Every contribution, no matter the amount, brings us one step closer to a greener future.</p>
+        </div>
+    </section>
+
+    <section class="matters-section-container">
+        <h2 class="matters-header-poppins">Why Your Donation Matters</h2>
+        <p class="matters-intro-open">Climate change is affecting Malaysia through rising temperatures, stronger floods, and increasing pollution.</p>
+        <p class="matters-intro-open">Your support helps us:</p>
+        
+        <div class="staggered-list-wrapper">
+            <ul class="staggered-ul">
+                <li class="step-1">• Organize environmental clean-ups across beaches, rivers, and parks</li>
+                <li class="step-2">• Conduct tree-planting campaigns to restore green areas</li>
+                <li class="step-3">• Educate communities about sustainable living</li>
+                <li class="step-4">• Support youth climate awareness programs</li>
+                <li class="step-5">• Fund materials, tools, and volunteer resources</li>
+            </ul>
+        </div>
+        
+        <p class="matters-footer-open">Together, we can create cleaner, safer environments for Malaysian communities.</p>
+    </section>
+
+    <section class="gradient-donation-card">
+        <div class="donation-left-side">
+            <div class="period-toggle-row">
+                <button class="toggle-btn-period" onclick="selectPeriod(this)">One-time</button>
+                <button class="toggle-btn-period" onclick="selectPeriod(this)">Monthly</button>
+            </div>
+
+            <p class="donation-counts-label">Every Donation Counts</p>
+
+            <div class="input-answer-box">
+                <div class="amount-typing-area">
+                    <span class="rm-label">RM</span>
+                    <input type="number" id="donationAmount" class="amount-input-clean" placeholder="0" min="0" oninput="checkForm()">
+                </div>
+                <div class="currency-dropdown-trigger" onclick="toggleDropdown('currencyMenu')">
+                    <span id="selectedCurrency">MYR</span> <span style="color:#1B4D3E; font-size: 10px;">▼</span>
+                    <div class="dropdown-content-small" id="currencyMenu">
+                        <div onclick="updateCurrency('MYR')">MYR</div>
+                        <div onclick="updateCurrency('USD')">USD</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="designation-dropdown-wrapper">
+                <div class="input-answer-box designation-main-trigger" onclick="toggleDropdown('desigMenu')">
+                    <div class="designation-content-left">
+                        <small class="label-top-left">Designation</small>
+                        <span id="activeDesigName" class="selection-display"></span> 
+                    </div>
+                    <div class="dropdown-icon-box">
+                        <span class="wireframe-arrow">∨</span>
+                    </div>
+                </div>
+                
+                <div class="dropdown-content-wide" id="desigMenu">
+                    <div class="desig-opt" onclick="selectDesig(this, 'General Campaigns')">General Campaigns</div>
+                    <div class="desig-opt" onclick="selectDesig(this, 'Plastics')">Plastics</div>
+                    <div class="desig-opt" onclick="selectDesig(this, 'Forest')">Forest</div>
+                    <div class="desig-opt" onclick="selectDesig(this, 'Climate & Energy')">Climate & Energy</div>
+                </div>
+            </div>
+
+            <div class="submit-centering-wrapper">
+                <button id="donateSubmitBtn" class="submit-donation-btn" onclick="submitForm()">Donate</button>
+            </div>
+        </div>
+
+        <div class="donation-right-side">
+            <h3 class="supports-title-poppins">What Your Donation Supports</h3>
+            <div class="supports-content-open">
+                <p><strong>RM10 – RM30</strong><br>Supports saplings for tree-planting programs.</p>
+                <p><strong>RM50 – RM100</strong><br>Funds clean-up tools, gloves, trash bags, and awareness materials.</p>
+                <p><strong>RM150 – RM300</strong><br>Helps run climate workshops for schools and local communities.</p>
+                <p><strong>RM500+</strong><br>Supports large-scale campaigns and long-term sustainability initiatives across Malaysia.</p>
+            </div>
+        </div>
+    </section>
+
+      <footer class="main-footer">
+        <div class="container footer-content-wrapper"> 
+            <div class="footer-top">
+                <span class="follow-us-label">Follow us</span>
+                <hr class="footer-line">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><img src="fb.png" alt="f"></a>
+                    <a href="https://www.instagram.com" target="_blank"><img src="ig.png" alt="ig"></a>
+                    <a href="https://wa.me/yournumber" target="_blank"><img src="wa.png" alt="wa"></a>
+                    <a href="https://www.youtube.com" target="_blank"><img src="yt.png" alt="yt"></a>
+                </div>
+                <hr class="footer-line">
+            </div>
+            
+            <nav class="footer-nav-links">
+                <a href="index.html">About Us</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="get-involved.html">Get Involved</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+        
+        <div class="footer-bar">
+            <p>© 2025 Climate Action Hackathon - All Rights Reserved</p>
+            <p><strong>Created by:</strong> DANUSH A/L SARAVANAKKUMAR | ID: 2410-2211 | BCM | MR VINCENT & MR FAIZ</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+    <script>
+        let selectedPeriodVal = "";
+        let selectedDesigVal = "";
+
+        function selectPeriod(btn) {
+            document.querySelectorAll('.toggle-btn-period').forEach(b => b.classList.remove('active-period'));
+            btn.classList.add('active-period');
+            selectedPeriodVal = btn.innerText;
+            checkForm();
+        }
+
+        function toggleDropdown(id) {
+            const el = document.getElementById(id);
+            const isVisible = el.style.display === 'block';
+            document.querySelectorAll('.dropdown-content-small, .dropdown-content-wide').forEach(m => m.style.display = 'none');
+            el.style.display = isVisible ? 'none' : 'block';
+        }
+
+        function updateCurrency(val) {
+            document.getElementById('selectedCurrency').innerText = val;
+            document.getElementById('currencyMenu').style.display = 'none';
+        }
+
+        function selectDesig(el, name) {
+            document.querySelectorAll('.desig-opt').forEach(opt => opt.classList.remove('selected-highlight'));
+            el.classList.add('selected-highlight');
+            document.getElementById('activeDesigName').innerText = name;
+            selectedDesigVal = name;
+            document.getElementById('desigMenu').style.display = 'none';
+            checkForm(); // This tells the form a selection was made
+        }
+
+        function checkForm() {
+            const amount = document.getElementById('donationAmount').value;
+            const btn = document.getElementById('donateSubmitBtn');
+            
+            // Logic: Button active if amount > 0 AND Designation is picked
+            if (amount > 0 && selectedDesigVal !== "") {
+                btn.style.opacity = "1";
+                btn.style.cursor = "pointer";
+            } else {
+                btn.style.opacity = "0.6";
+            }
+        }
+
+        function submitForm() {
+            const amount = document.getElementById('donationAmount').value;
+            if (amount > 0 && selectedDesigVal !== "") {
+                alert("Thank you for your donation of " + document.getElementById('selectedCurrency').innerText + " " + amount + " to " + selectedDesigVal + "!");
+            } else {
+                alert("Please enter an amount and select a designation.");
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
