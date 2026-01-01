@@ -1,0 +1,656 @@
+/* Hide mobile parts when on desktop */
+@media screen and (min-width: 1025px) {
+    .mobile-only { display: none !important; }
+}
+
+/* Hide desktop parts when on mobile */
+@media screen and (max-width: 1024px) {
+    .desktop-only { display: none !important; }
+}
+/* --- DESKTOP VERSION ONLY (1025px and wider) --- */
+@media screen and (min-width: 1025px) {
+
+    /* GLOBAL VARIABLES & RESETS */
+    :root {
+        --primary-green: #34BD29;
+        --grad-header: linear-gradient(90deg, #0C492F, #1D724F);
+        --btn-light: #A8E6A3; 
+        --btn-dark: #1B4D3E;
+        --footer-bg: #0B4022;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { 
+        font-family: 'Open Sans', sans-serif; 
+        color: #333333; 
+        line-height: 1.6; 
+    }
+
+    .container { max-width: 1440px; margin: 0 auto; padding: 0 40px; }
+
+    /* HEADER */
+    .main-header { background: var(--grad-header); padding: 30px 0; text-align: center; }
+    .logo { font-family: 'Montserrat', sans-serif; color: var(--primary-green); font-size: 5rem; font-weight: 700; }
+
+    /* HERO SECTION */
+    .hero { 
+        width: 1440px; height: 913px; margin: 0 auto;
+        background: url('kl-skyline.jpg') center/cover no-repeat; 
+        display: flex; flex-direction: column; align-items: center; justify-content: flex-end; 
+        padding-bottom: 25px; 
+    }
+    .hero-bottom-content { text-align: center; color: #FFFFFF; font-family: 'Montserrat', sans-serif; font-weight: 800; }
+    .hero-bottom-content h2 { font-size: 2.5rem; margin-bottom: 5px; }
+    .hero-bottom-content p { font-size: 1.875rem; margin-bottom: 5px; }
+
+    /* DONATE BUTTON */
+    .donate-btn { 
+        width: 240px; height: 65px; border-radius: 12px;
+        background-color: var(--btn-light); color: var(--btn-dark); border: 3px solid #000000; 
+        font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 2rem;
+        cursor: pointer; margin-top: 25px; 
+    }
+
+    /* NAVIGATION GRID */
+    .nav-hr { border: 0; border-top: 1px solid #000000; margin: 30px 0; }
+    .nav-grid { display: flex; justify-content: center; gap: 40px; padding: 10px 0; }
+    .nav-card { 
+        width: 171px; height: 96px; border-radius: 10px;
+        display: flex; align-items: center; justify-content: center; text-decoration: none;
+        font-family: 'Montserrat', sans-serif; font-weight: 700; border: 1px solid #1B4D3E;
+        background: var(--btn-light); color: var(--btn-dark);
+    }
+    .nav-card.active { background: #1B4D3E; color: #A8E6A3; }
+
+    /* ABOUT US CONTENT STYLES */
+    .section-title { font-family: 'Poppins', sans-serif; font-weight: 600; color: #1D724F; font-size: 3.5rem; text-align: center; margin: 60px 0; }
+    .side-heading { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 2.2rem; margin-bottom: 20px; color: #333333; }
+    .center-text { text-align: center !important; }
+
+    .flex-row { display: flex; align-items: center; gap: 80px; margin-bottom: 100px; text-align: left; }
+    .reverse { flex-direction: row-reverse; } 
+    .text-side { flex: 1; font-family: 'Open Sans', sans-serif; font-size: 1.1rem; }
+    .img-side { flex: 1; }
+    .standard-img { width: 487px; height: 278px; object-fit: cover; }
+
+    /* GOALS SECTION */
+    .goals-container { text-align: center; margin-top: 100px; }
+    .goals-text { margin-bottom: 65px; max-width: 1000px; margin-left: auto; margin-right: auto; }
+    .goals-staggered-wrapper { display: flex; flex-direction: column; gap: 40px; align-items: center; margin-bottom: 100px; }
+    .goals-top-row { display: flex; gap: 40px; justify-content: center; }
+
+/* GALLERY PAGE SPECIFIC STYLES - UPDATED */
+.gallery-page {
+    text-align: center;
+}
+
+.gallery-intro {
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+}
+
+.gallery-section {
+    margin-bottom: 80px;
+}
+
+.vertical-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; 
+    margin-bottom: 30px;
+}
+
+/* Updated Image Size: 537.83px * 308px */
+.gallery-img {
+    width: 537.83px; 
+    height: 308px;
+    border-radius: 0px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Updated View More Button: 240x65, #A8E6A3, Montserrat Medium, #1B4D3E, 2rem */
+.view-more-btn {
+    width: 240px;
+    height: 65px;
+    background-color: #A8E6A3; 
+    color: #1B4D3E;
+    border: 1px solid #1B4D3E;
+    border-radius: 10px; /* Matches your Donate button style */
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; /* Medium weight */
+    font-size: 2rem;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view-more-btn:hover {
+    filter: brightness(0.9);
+}
+
+.video-placeholder {
+    position: relative;
+    cursor: pointer;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.moments-text {
+    margin-bottom: 80px;
+}
+
+/* =========================================
+   GET INVOLVED PAGE STYLES
+   ========================================= */
+
+/* HOW IT WORKS SECTION */
+.how-it-works-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.step-item {
+    margin-bottom: 35px;
+}
+
+.step-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Poppins SemiBold */
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.step-desc {
+    font-family: 'Open Sans', sans-serif;
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* FORM CONTAINER */
+.form-container {
+    width: 1138px;
+    height: auto;
+    background-color: #D9D9D9;
+    margin: 80px auto;
+    padding: 50px 70px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Centering the Top Headers */
+.form-header-center {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-main-title { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 2.2rem; }
+.form-sub-title { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.6rem; margin-top: 10px; }
+.form-instruction { font-size: 1rem; margin-top: 10px; }
+
+/* LAYOUT: Split Left and Right Columns */
+.form-flex-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px; /* Space between the two main columns */
+}
+
+.form-col {
+    width: 408px; /* Matches the width of your answer boxes */
+}
+
+/* BOX STYLES: 408x34, Stroke 1 (Inside), Radius 5 */
+.box-style, 
+input[type="text"], 
+input[type="email"], 
+input[type="tel"] {
+    width: 408px;
+    height: 34px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures 1px stroke is inside */
+    padding: 0 10px;
+    background-color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* STATE DROPDOWN SPECIFIC STYLE */
+.state-dropdown {
+    width: 408px;
+    height: 34px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    background-color: #ffffff; /* Match theme green */
+    color: #1B4D3E;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.state-dropdown option {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.main-label { font-weight: 500; display: block; margin-top: 25px; margin-bottom: 5px; }
+.sub-label { font-size: 0.85rem; display: block; margin-bottom: 3px; }
+
+/* RADIO BUTTONS STYLE */
+.radio-option { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; cursor: pointer; }
+.radio-text { font-size: 0.95rem; }
+
+input[type="radio"] {
+    appearance: none;
+    width: 18px; height: 18px;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    background-color: #A8E6A3; /* Light Green */
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+input[type="radio"]:checked {
+    background-color: #1B4D3E; /* Dark Green */
+}
+
+.form-small-note { font-size: 0.85rem; margin-top: 10px; font-style: montserrat; }
+.orientation-box { margin-top: 30px; }
+
+/* SUBMIT BUTTON: 130x46, Radius 5 */
+.submit-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns button to the left of the column */
+    margin-top: 40px;
+}
+
+.submit-btn-fixed {
+    width: 130px;
+    height: 46px;
+    background-color: #A8E6A3;
+    color: #1B4D3E;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Bold */
+    cursor: pointer;
+}
+
+/* UPCOMING EVENTS (537.83x308, 50% Opacity) */
+.event-card {
+    position: relative;
+    width: 537.83px;
+    height: 308px;
+    margin: 40px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.event-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5; /* 50% Opacity */
+}
+
+.event-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+}
+
+.event-overlay h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; /* Medium */
+    font-size: 1.8rem;
+    color: #1B4D3E;
+}
+
+.event-overlay p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Bold */
+    font-size: 1.1rem;
+    color: #1B4D3E;
+}
+
+/* CONTACT WIREFRAME REFINEMENTS */
+.contact-wireframe-img { width: 372px; margin: 40px auto; display: block; }
+.label-poppins { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.8rem; }
+.desc-sans { font-family: 'Open Sans', sans-serif; font-size: 1.1rem; }
+.email-sans {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    color: #1B4D3E; /* Your theme dark green */
+    font-weight: 600;
+    text-decoration: none; /* Removes the default underline */
+    transition: 0.3s;
+}
+
+.email-sans:hover {
+    text-decoration: underline; /* Optional: adds underline only when hovering */
+    opacity: 0.8;
+}
+.wireframe-divider { width: 200px; height: 1px; background: #000; margin: 20px auto; }
+.icon-43 { width: 33px; height: 33px; }
+.social-row { display: flex; justify-content: center; gap: 15px; margin-bottom: 50px; }
+
+/* THE FORM CONTAINER: #D9D9D9 */
+.feedback-form-container {
+    width: 730px;
+    background-color: #D9D9D9;
+    margin: 45px auto 100px auto;
+    padding: 30px;
+}
+
+/* TOP GRID: 3 Equal Boxes */
+/* Shared styles for the 3 boxes with sharp corners */
+/* Container to keep boxes side-by-side */
+.top-fields-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Spreads them across the 730px form */
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.field-item {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* Base style: Radius 0 and Stroke Weight 1 Inside */
+.sharp-input {
+    border: 1px solid #000000;
+    border-radius: 0 !important; /* Forces Corner Radius 0 */
+    box-sizing: border-box;       /* Keeps stroke weight 1 inside */
+    background: #FFFFFF;
+    padding: 0 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Custom Wireframe Dimensions */
+#name-box {
+    width: 192.01px;
+    height: 41px;
+}
+
+#email-box {
+    width: 222.76px;
+    height: 41px;
+}
+
+#phone-box {
+    width: 226px;
+    height: 40.88px;
+}
+.field-item { text-align: left; }
+.field-item label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* INPUT BOXES: Stroke weight 1 inside */
+.input-stroke-inside {
+    width: 100%;
+    height: 34px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 5px;
+}
+
+/* NOTE STYLE BOX WITH 2 LINES */
+.feedback-note-area {
+    width: 100%;
+    height: 100px;
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    margin-top: 25px;
+    position: relative;
+}
+
+.feedback-label-inside {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    color: #D9D9D9; /* Light grey text like your image */
+    font-size: 14px;
+    z-index: 1;
+}
+
+.internal-line {
+    width: 100%;
+    height: 1px;
+    background-color: #000000;
+    position: absolute;
+    left: 0;
+}
+.line-1 { top: 33px; }
+.line-2 { top: 66px; }
+
+.feedback-text-overlay {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    resize: none;
+    outline: none;
+    position: relative;
+    z-index: 5;
+    padding: 5px 10px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 33px; /* Matches the line spacing */
+}
+
+/* ALIGNMENT HELPERS */
+.center-p { text-align: center; margin: 10px 0; }
+
+/* CENTERED POINT FORM LOGIC */
+.matters-section-centered {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.list-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.point-form-centered {
+    text-align: left; /* Text aligns left relative to the bullets */
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+    line-height: 2;
+  
+}
+/* SUBMIT BUTTON: 74x21.29 Bold with Radius 5 */
+.wireframe-submit-btn {
+    width: 74px;
+    height: 21.29px;
+    background-color: #A8E6A3;
+    color: #1B4D3E;
+    border: 1px solid #000000;
+    border-radius: 5px; /* <--- Change this to 5 */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* DONATE PAGE SPECIFIC CSS */
+
+.donate-hero-container {
+    width: 1440px; height: 913px; margin: 0 auto;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+                url('volunteer-box.jpg') center/cover no-repeat;
+    display: flex; justify-content: center; align-items: center; text-align: center;
+}
+
+.hero-title-poppins { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 2.5rem; color: #000; }
+.hero-desc-open { font-family: 'Open Sans', sans-serif; font-size: 1.1rem; max-width: 900px; color: #000; }
+
+.matters-section-container { text-align: center; margin: 80px auto; }
+.staggered-list-wrapper { display: flex; justify-content: center; margin: 30px 0; }
+.staggered-ul { list-style: none; font-family: 'Open Sans', sans-serif; text-align: center; }
+
+.gradient-donation-card {
+    width: 1138px; height: 433px; margin: 0 auto 100px auto;
+    background: linear-gradient(90deg, #2D572A, #63BD5B);
+    display: flex; padding: 50px; box-sizing: border-box;
+}
+
+.donation-left-side { 
+    width: 50%; display: flex; flex-direction: column; align-items: center; 
+}
+
+.period-toggle-row { display: flex; gap: 15px; margin-bottom: 20px; }
+.toggle-btn-period {
+    width: 169px; height: 55px; border-radius: 10px; border: 1px solid #000;
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    background: #A8E6A3; color: #1B4D3E; cursor: pointer;
+}
+.active-period { background: #1B4D3E !important; color: #A8E6A3 !important; }
+
+.donation-counts-label { 
+    font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 24px;  
+    text-align: center; width: 350px; margin: 20px 0; color: #000000;
+}
+
+.input-answer-box {
+    width: 350px; height: 55px; background: #FFF; border: 1px solid #000;
+    display: flex; align-items: center; padding: 0 15px; margin-bottom: 15px;
+    box-sizing: border-box; position: relative; cursor: pointer;
+}
+
+.amount-typing-area { display: flex; align-items: center; gap: 8px; flex-grow: 1; }
+.rm-label { font-family: 'Montserrat'; font-weight: 500; font-size: 1.1rem; }
+.amount-input-clean { border: none; background: transparent; outline: none; font-family: 'Montserrat'; font-size: 1.1rem; width: 100%; }
+
+/* CURRENCY DROPDOWN: Hidden by default and compact */
+.currency-dropdown-trigger { position: relative; }
+.dropdown-content-small {
+    display: none; position: absolute; background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #000; z-index: 100; top: 30px; right: 0; width: 60px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+.dropdown-content-small div { padding: 5px; font-family: 'Montserrat'; font-size: 12px; cursor: pointer; text-align: center; color: #000; }
+
+/* DESIGNATION BOX: Arrow on far right */
+.designation-dropdown-wrapper { position: relative; width: 350px; }
+.designation-main-trigger {
+    display: flex; justify-content: space-between; align-items: center; 
+}
+.designation-content-left {
+    display: flex; flex-direction: column; justify-content: flex-start;
+}
+.label-top-left { font-size: 10px; font-family: 'Montserrat', sans-serif; color: #666; }
+.selection-display { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 14px; color: #000; }
+
+.dropdown-icon-box { display: flex; align-items: center; }
+.wireframe-arrow { color: #1B4D3E; font-size: 14px; font-weight: bold; }
+
+/* UPDATED DESIGNATION DROPDOWN OVERLAY */
+.dropdown-content-wide {
+    display: none; 
+    position: absolute; 
+    z-index: 1000; 
+    top: 55px; 
+    width: 350px; 
+    left: 0;
+    border: 1px solid #000;
+    
+    /* 1. Opacity 75% */
+    background: rgba(255, 255, 255, 0.75); 
+    
+    /* 2. Border Radius 10px */
+    border-radius: 10px; 
+    
+    /* 3. Elevation Light/1 Shadow */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 4px 12px rgba(0, 0, 0, 0.05);
+    
+    /* Ensures background color doesn't leak out of rounded corners */
+    overflow: hidden; 
+}
+.desig-opt { padding: 10px 15px; font-family: 'Montserrat'; cursor: pointer; color: #000; }
+
+.selected-highlight { background: #1B4D3E; color: #A8E6A3; display: flex; justify-content: space-between; align-items: center; }
+.selected-highlight::after { content: '✔'; background: #FFF; color: #1B4D3E; font-size: 10px; padding: 2px 5px; border-radius: 2px; }
+
+/* CENTERED BUTTON WRAPPER */
+.submit-centering-wrapper { 
+    width: 350px; display: flex; justify-content: center; margin-top: 10px; 
+    position: relative; z-index: 10;
+}
+.submit-donation-btn {
+    width: 103px; 
+    height: 28px; 
+    background: #A8E6A3; 
+    color: #1B4D3E;
+    border: 1px solid #000; 
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;  
+    
+    /* Changed to 800 for extra boldness */
+    font-weight: 800; 
+    
+    /* Optional: Slight letter spacing makes bold text easier to read on buttons */
+    letter-spacing: 0.5px; 
+    
+    cursor: pointer; 
+    opacity: 100; 
+    transition: 0.3s;
+}
+
+.donation-right-side { width: 50%; padding-left: 50px; }
+.supports-title-poppins { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 20px; }
+.supports-content-open { font-family: 'Open Sans', sans-serif; line-height: 1.6; }
+
+.main-footer { background: #000; color: #fff; text-align: center; padding: 20px 0; }
+
+  /* FOOTER (In the end as requested) */
+    .main-footer { background: var(--grad-header); color: #FFFFFF; padding: 60px 0 0 0; }
+    .footer-content-wrapper { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 60px; }
+    .footer-top { text-align: left; }
+    .follow-us-label { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 20px; line-height: 1; }
+    .footer-line { border: 0; border-top: 1px solid #FFFFFF; margin: 10px 0; width: 170px; }
+    .social-icons { display: flex; align-items: center; }
+    .social-icons a { text-decoration: none; display: inline-block; margin-right: 15px; }
+    .social-icons img { width: 30px; display: block; }
+    .footer-nav-links { display: flex; gap: 140px; padding-top: 0; }
+    .footer-nav-links a { color: #FFFFFF; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 30px; line-height: 1; }
+    .footer-bar { background: #0B4022; text-align: center; padding: 30px 0; font-family: 'Montserrat', sans-serif; }
+
+} /* End Desktop Media Query */
+
